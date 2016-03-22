@@ -6,6 +6,9 @@ from google.appengine.api import memcache
 class GAECache(BaseCache):
     "An implementation of a cache binding using AppEngine's memcache API"
 
+    def __init__(self, location, params):
+        super(self.__class__, self).__init__(params)
+
     @property
     def _client(self):
         if getattr(self, '_gae_client', None) is None:
