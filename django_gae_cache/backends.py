@@ -17,7 +17,7 @@ class GAECache(BaseCache):
 
     def add(self, key, value, timeout=DEFAULT_TIMEOUT, version=None):
         if timeout is DEFAULT_TIMEOUT:
-            return self._client.add(key, value, time=timeout)
+            return self._client.add(key, value)
         return self._client.add(key, value, time=timeout)
 
     def get(self, key, default=None, version=None):
